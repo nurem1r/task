@@ -1,4 +1,4 @@
-// Объект dictionary для хранения переводов
+
 const dictionary = {
     "hello": "здравствуйте",
     "world": "мир",
@@ -22,7 +22,6 @@ const dictionary = {
     "computer": "компьютер"
 };
 
-// Имитация перевода
 export function fakeTranslate(word) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -32,6 +31,6 @@ export function fakeTranslate(word) {
             } else {
                 reject("Перевод не найден.");
             }
-        }, 1000); // Задержка 1 секунда
+        }, 1000); 
     });
 }

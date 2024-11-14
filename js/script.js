@@ -2,7 +2,6 @@ import { fakeTranslate } from './fakeTranslate.js';
 
 let favorites = [];
 
-// Функция для перевода слова с использованием fakeTranslate
 async function translateWord() {
     const word = document.getElementById("wordInput").value.trim();
     if (!word) {
@@ -19,7 +18,6 @@ async function translateWord() {
     }
 }
 
-// Сохранение перевода в избранное
 function saveTranslation() {
     const word = document.getElementById("wordInput").value.trim();
     const translation = document.getElementById("translationResult").innerText;
@@ -31,10 +29,9 @@ function saveTranslation() {
     alert(`Сохранено: ${word} - ${translation}`);
 }
 
-// Обновление списка избранного
 function updateFavorites() {
     const favoritesList = document.getElementById("favoritesList");
-    favoritesList.innerHTML = ""; // Очистить список
+    favoritesList.innerHTML = ""; 
 
     if (favorites.length === 0) {
         const message = document.createElement("li");
@@ -55,13 +52,11 @@ function updateFavorites() {
     }
 }
 
-// Удаление перевода из избранного
 function removeFavorite(index) {
     favorites.splice(index, 1);
     updateFavorites();
     alert("Перевод удален из избранного.");
 }
 
-// Добавление обработчиков событий для кнопок
 document.getElementById("translateButton").addEventListener("click", translateWord);
 document.getElementById("saveButton").addEventListener("click", saveTranslation);
